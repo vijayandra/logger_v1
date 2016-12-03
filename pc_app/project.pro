@@ -117,48 +117,11 @@ LIBS += -L$${QWT_LOCATION}/lib -lqwt
 }
 
 
-INCLUDEPATH  += ../../common
-INCLUDEPATH  += ../fixed_lib/qwt3d
-INCLUDEPATH  += ../fixed_lib/codec
-INCLUDEPATH  += ../fixed_lib/boot_pic32
-INCLUDEPATH  += ../fixed_lib
-INCLUDEPATH  += ../../ext_common
+INCLUDEPATH  += ../ext_common
 
 
 LIBS         += -lm
 LIBS         += -L../fixed_lib/bin -lfixed_lib
-
-HEADERS       += ../../common/tcppkt.h
-SOURCES       += ../../common/tcppkt.c
-
-unix {
-PRE_TARGETDEPS       = ../fixed_lib/bin/fixed_lib.so
-PRE_TARGETDEPS      += ../fixed_lib/hid/libHIDAPI.a
-PRE_TARGETDEPS      += ../../common/cscript/run_cscr
-
-Fixed_Lib.target     = ../fixed_lib/bin/fixed_lib.so
-Fixed_Lib.commands   = cd ../fixed_lib && Qmake
-Fixed_Lib.depends    = ../fixed_lib/lib_fixed.pro
-QMAKE_EXTRA_TARGETS += Fixed_Lib
-
-hidllib.target     = ../fixed_lib/hid/libHIDAPI.a
-hidllib.commands   = cd ../fixed_lib/hid && Qmake
-hidllib.depends    = ../fixed_lib/hid/libhid.pro
-QMAKE_EXTRA_TARGETS += hidllib
-
-run_cscr.target     = ../../common/cscript/run_cscr
-run_cscr.commands   = cd ../../common/cscript && Qmake
-run_cscr.depends    = ../../common/cscript/project.pro
-QMAKE_EXTRA_TARGETS += run_cscr
-
-}
-
-
-QMAKE_POST_LINK += "cp ../../common/cscript/bin/run_cscr bin"
-
-
-
-
 
 win {
 unix {
