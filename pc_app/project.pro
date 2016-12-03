@@ -71,8 +71,6 @@ SOURCES += $${RP}/light_coap/protocol/llist.c
 SOURCES += $${RP}/light_coap/protocol/str.c
 SOURCES += $${RP}/light_coap/protocol/uri.c
 SOURCES += $${RP}/light_coap/protocol/srv_coap.c
-SOURCES += $${RP}/light_coap/endpoints/endpoints.c
-SOURCES += $${RP}/light_coap/endpoints/ep_device.c
 
 
 RC_FILE       = iwscope.rc
