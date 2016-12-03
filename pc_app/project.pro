@@ -59,7 +59,7 @@ SOURCES += iwextern.cpp
 HEADERS += iwextern.h
 
 #RP= ../../../scratch1
-RP= ../..
+RP= ..
 
 INCLUDEPATH += $${RP}/ext_common
 INCLUDEPATH += $${RP}/light_coap/protocol
