@@ -455,7 +455,7 @@ int scoap_check_route(const scoap_packet_t *inpkt)
     uint8_t count;
     int i;
     int j=0;
-    const scoap_endpoint_t *ep = endpoints;
+    const scoap_endpoint_t *ep = NULL;
 
     while(NULL != ep->handler)
     {
@@ -494,7 +494,7 @@ int scoap_handle_req(scoap_rw_buffer_t *scratch, const scoap_packet_t *inpkt, sc
     const scoap_option_t *opt;
     uint8_t count;
     int i;
-    const scoap_endpoint_t *ep = endpoints;
+    const scoap_endpoint_t *ep = NULL;
 
     while(NULL != ep->handler)
     {

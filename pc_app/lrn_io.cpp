@@ -43,7 +43,7 @@ LRN_io::LRN_io(QString server, quint16 port,QObject *parent) : QThread(parent)
     reinit_done= false;
 
     //init_zprotocol();
-    endpoint_setup();
+    //endpoint_setup();
 
     rem_server=server;
     rem_port  =port;
